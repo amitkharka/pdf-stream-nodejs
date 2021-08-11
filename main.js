@@ -1,7 +1,10 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
 const app = express();
 const port = 8090;
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   var file = fs.createReadStream('./sample.pdf');
